@@ -30,7 +30,7 @@ import { signUser } from '../Redux/auth/actions';
   
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(formData);
+        // console.log(formData);
         try {
           dispatch(signUser(formData));
         } catch (err) {

@@ -4,7 +4,7 @@ export const getAllProducts = (query) => async (dispatch) => {
 
     try {
         dispatch({ type: GET_ALL_PRODUCTS_REQUEST });
-        const res = await axios.get(`http://localhost:8080/products/get`)
+        const res = await axios.get(`https://vowel-web.onrender.com/products/get`)
         dispatch({ type: GET_ALL_PRODUCTS_SUCCESS, payload: res.data });
     } catch (error) {
         dispatch({
@@ -18,7 +18,7 @@ export const updateProduct = (id, data) => async (dispatch) => {
     try {
         dispatch({ type: UPDATE_PRODUCT_REQUEST });
 
-        await fetch(`http://localhost:8080/products/update/${id}`, {
+        await fetch(`https://vowel-web.onrender.com/products/update/${id}`, {
             body: JSON.stringify(data),
             method: "PUT",
             headers: {
@@ -40,7 +40,7 @@ export const deleteProduct = (id) => async (dispatch) => {
     try {
         dispatch({ type: DELETE_PRODUCT_REQUEST });
 
-        await fetch(`http://localhost:8080/products/delete/${id}`, {
+        await fetch(`https://vowel-web.onrender.com/products/delete/${id}`, {
             method: "DELETE",
             headers: {
                 token: localStorage.getItem("token"),

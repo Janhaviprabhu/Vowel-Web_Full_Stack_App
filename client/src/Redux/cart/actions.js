@@ -31,7 +31,7 @@ export const getCartData = () => async (dispatch) => {
 export const addCartData = (data) => async (dispatch) => {
     dispatch({ type: POST_CART_LOADING });
     try {
-        const res = await axios.post(`http://localhost:8080/cart/addtocart`, data, {
+        const res = await axios.post(`https://vowel-web.onrender.com/cart/addtocart`, data, {
             headers: { Authorization: `Bearer ${token}` },
         });
         dispatch({ type: POST_CART_SUCCESS, payload: res.data });
@@ -45,7 +45,7 @@ export const addCartData = (data) => async (dispatch) => {
 export const deleteCartData = (id) => async (dispatch) => {
     dispatch({ type: DELETE_CART_LOADING });
     try {
-        const res = await axios.delete(`http://localhost:8080/cart/delete/${id}`, {
+        const res = await axios.delete(`https://vowel-web.onrender.com/cart/delete/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
         });
         dispatch({ type: DELETE_CART_SUCCESS, payload: res });
@@ -61,7 +61,7 @@ export const updateCartData = (id, data) => async (dispatch) => {
     console.log(id);
     try {
         const res = await axios.patch(
-            `http://localhost:8080/cart/update/${id}`,
+            `https://vowel-web.onrender.com/cart/update/${id}`,
             { qty: data },
             // {
             //     headers: { Authorization: `Bearer ${token}` },

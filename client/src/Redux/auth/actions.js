@@ -6,7 +6,7 @@ export const signUser = (creds) => async (dispatch) => {
 
     try {
         let res = await axios.post(
-            "https://grow-cal.onrender.com/register",
+            "https://vowel-web.onrender.com/user/signup",
             creds
         );
         dispatch({ type: REGISTER_SUCCESS, payload: res.data });
@@ -24,7 +24,7 @@ export const signUser = (creds) => async (dispatch) => {
 export const logUser = (creds) => async (dispatch) => {
     dispatch({ type: LOGIN_LOADING })
     try {
-        let res = await axios.post("https://grow-cal.onrender.com/login", creds);
+        let res = await axios.post("https://vowel-web.onrender.com/user/login", creds);
         dispatch({ type: LOGIN_SUCCESS, payload: res.data });
         // console.log(res.data);
         alert("Login Success")
